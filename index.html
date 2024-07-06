@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
+    <link rel="icon" href="title.png" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <h1>QR Code Generator</h1>
+    </header>
+    <div class="container">
+        <main>
+            <div class="main-content">
+                <div class="form-group">
+                    <label for="data">Enter Details:</label>
+                    <input type="text" id="data" placeholder="Enter details">
+                </div>
+                <div class="form-group">
+                    <label for="link">Enter Link:</label>
+                    <input type="url" id="link" placeholder="Enter link">
+                </div>
+                <button onclick="generateQR()">Generate QR Code</button>
+            </div>
+            <div class="side-panel">
+                <canvas id="qrCanvas"></canvas>
+                <img src="qr.png" alt="QR Code Example">
+            </div>
+        </main>
+        <article>
+            <h2>About QR Codes</h2>
+            <p>QR codes (Quick Response codes) are two-dimensional barcodes that can store a variety of data, including URLs, contact information, and text. They are widely used for quickly sharing information and can be scanned using smartphones and other devices equipped with a camera and QR code scanning software.</p>
+            <h3>How to Generate a QR Code</h3>
+            <p>To generate a QR code, enter the details and the URL you want the QR code to link to in the form fields above. Click the "Generate QR Code" button, and a QR code will be generated and displayed on the screen.</p>
+            <h3>How to Scan a QR Code</h3>
+            <p>To scan a QR code, open the QR code scanning app on your smartphone and point the camera at the QR code. The app will automatically recognize the QR code and provide you with the information or link embedded in the code.</p>
+        </article>
+    </div>
+    <footer>
+        <p>© 2024 QR Code Generator. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
