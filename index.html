@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://cdn.jsdelivr.net/npm/qrious@4.0.2/dist/qrious.min.js"></script>
     <link rel="icon" href="title.png" type="image/x-icon">
-
 </head>
 <body>
     <header>
@@ -25,6 +24,7 @@
                     <input type="url" id="link" placeholder="Enter link">
                 </div>
                 <button onclick="generateQR()">Generate QR Code</button>
+                <button id="download-btn" style="display: none;" onclick="downloadQR()">Download QR Code</button>
             </div>
             <div class="side-panel">
                 <canvas id="qrCanvas"></canvas>

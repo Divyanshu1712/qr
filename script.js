@@ -1,27 +1,28 @@
+// script.js
 function generateQR() {
-    const data = document.getElementById('data').value;
+    const details = document.getElementById('data').value;
     const link = document.getElementById('link').value;
     const qrCanvas = document.getElementById('qrCanvas');
+    const downloadBtn = document.getElementById('download-btn');
 
-    if (!data || !link) {
-        alert('Please enter both details and link.');
+    if (!details || !link) {
+        alert('Please enter details and link.');
         return;
     }
 
-    // Encode data and link
-    const qrData = `${link}?data=${encodeURIComponent(data)}`;
-
-    // Clear previous QR code
-    qrCanvas.getContext('2d').clearRect(0, 0, qrCanvas.width, qrCanvas.height);
-
-    // Generate the QR code
     const qr = new QRious({
         element: qrCanvas,
-        value: qrData,
-        size: 256,
-        level: 'H' // High error correction
+        value: `${link}\n${details}`,
+        size: 200,
     });
 
-    // Show the encoded data and link for debugging
-    console.log('Encoded QR Data:', qrData);
+    downloadBtn.style.display = 'inline-block';
+}
+
+function downloadQR() {
+    const qrCanvas = document.getElementById('qrCanvas');
+    const downloadLink = document.createElement('a');
+    downloadLink.href = qrCanvas.toDataURL('image/png');
+    downloadLink.download = 'qrcode.png';
+    downloadLink.click();
 }

@@ -74,8 +74,10 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #80eb7a;
 }
+
+
 
 .side-panel {
     flex: 1;
