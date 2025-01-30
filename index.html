@@ -23,9 +23,13 @@
                     <label for="link">Enter Link:</label>
                     <input type="url" id="link" placeholder="Enter link">
                 </div>
-                <button onclick="generateQR()">Generate QR Code</button>
-                <button id="download-btn" style="display: none;" onclick="downloadQR()">Download QR Code</button>
+                <div class="btn_area">
+                    <button onclick="generateQR()">Generate QR Code</button>
+                    <button id="download-btn" style="display: none;" onclick="downloadQR()">Download QR Code</button>
+                    <button id="reset-btn" style="display: none;" onclick="resetField()">Reset</button>
             </div>
+                </div>
+                
             <div class="side-panel">
                 <canvas id="qrCanvas"></canvas>
                 <img src="qr.png" alt="QR Code Example">
