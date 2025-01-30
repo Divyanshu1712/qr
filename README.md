@@ -28,7 +28,7 @@ Simply open `index.html` in your browser.
 If you have VS Code, install the **Live Server** extension and start the project.
 
 ## 📸 Screenshots
-![QR Code Generator UI](screenshot.png)
+![QR Code Generator UI](UI.png)
 
 ## 📝 Usage
 1. Enter text or a link in the input fields.
