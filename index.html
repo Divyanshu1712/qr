@@ -25,7 +25,8 @@
 </head>
 <body class="gradient-bg flex flex-col items-center min-h-screen">
     <header class="w-full gradient-header text-white py-4 text-center text-2xl font-bold shadow-custom flex justify-between items-center px-6">
-        <div>QR Code Generator</div>
+        <a href="index.html">  <div>QR Code Generator</div></a>
+        
         <div class="flex gap-3">
             <a href="histroy.html"><button onclick="showHistory()" class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-200 text-sm font-semibold shadow-sm">History</button></a>
             <a href="dashborad.html">
@@ -35,42 +36,45 @@
 
         </div>
     </header>
-    <div class="container bg-white shadow-custom rounded-lg p-8 mt-8 w-full max-w-4xl">
-        <main class="flex flex-col md:flex-row justify-between w-full">
-            <div class="main-content flex-1 p-4">
-                <div class="form-group mb-6">
-                    <label for="data" class="block text-gray-700 text-lg font-semibold mb-2">Enter Details:</label>
-                    <input type="text" id="data" placeholder="Enter details" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
-                </div>
-                <div class="form-group mb-6">
-                    <label for="link" class="block text-gray-700 text-lg font-semibold mb-2">Enter Link:</label>
-                    <input type="url" id="link" placeholder="Enter link" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
-                </div>
-                <div class="flex flex-wrap gap-4 w-full">
-                    <button onclick="generateQR()" class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 w-1/3 min-w-[120px] font-semibold shadow-md">Generate</button>
-                    <button id="download-btn" style="display: none;" onclick="downloadQR()" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200 w-1/3 min-w-[120px] font-semibold shadow-md">Download</button>
-                    <button id="reset-btn" style="display: none;" onclick="resetField()" class="px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-200 w-1/3 min-w-[120px] font-semibold shadow-md">Reset</button>
-                </div>
-            </div>
-            
-            <div id="notification" class="hidden fixed top-5 right-5 bg-red-500 text-white px-4 py-2 rounded-md shadow-md"></div>
 
-            <div class="side-panel flex flex-col items-center p-4">
-                <canvas id="qrCanvas" class="border-2 border-gray-200 p-4 rounded-lg shadow-md"></canvas>
-                <div class="mt-6">
-                    <img src="qr.png" alt="QR Code Example" class="w-48 h-48 rounded-lg shadow-md">
+    <main>
+        <div class="container bg-white shadow-custom rounded-lg p-8 mt-8 w-full max-w-4xl">
+            <main class="flex flex-col md:flex-row justify-between w-full">
+                <div class="main-content flex-1 p-4">
+                    <div class="form-group mb-6">
+                        <label for="data" class="block text-gray-700 text-lg font-semibold mb-2">Enter Details:</label>
+                        <input type="text" id="data" placeholder="Enter details" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                    </div>
+                    <div class="form-group mb-6">
+                        <label for="link" class="block text-gray-700 text-lg font-semibold mb-2">Enter Link:</label>
+                        <input type="url" id="link" placeholder="Enter link" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200">
+                    </div>
+                    <div class="flex flex-wrap gap-4 w-full">
+                        <button onclick="generateQR()" class="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-200 w-1/3 min-w-[120px] font-semibold shadow-md">Generate</button>
+                        <button id="download-btn" style="display: none;" onclick="downloadQR()" class="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-200 w-1/3 min-w-[120px] font-semibold shadow-md">Download</button>
+                        <button id="reset-btn" style="display: none;" onclick="resetField()" class="px-8 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-200 w-1/3 min-w-[120px] font-semibold shadow-md">Reset</button>
+                    </div>
                 </div>
-            </div>
-        </main>
-        <article class="mt-8 text-gray-700">
-            <h2 class="text-2xl font-bold mb-4">About QR Codes</h2>
-            <p class="mt-2 text-lg">QR codes (Quick Response codes) are two-dimensional barcodes that can store a variety of data...</p>
-            <h3 class="text-xl font-semibold mt-6">How to Generate a QR Code</h3>
-            <p class="mt-2 text-lg">Enter the details and the URL, then click the "Generate" button to create a QR code.</p>
-            <h3 class="text-xl font-semibold mt-6">How to Scan a QR Code</h3>
-            <p class="mt-2 text-lg">Use a QR scanner app to scan the generated code and retrieve the information.</p>
-        </article>
-    </div>
+                
+                <div id="notification" class="hidden fixed top-5 right-5 bg-red-500 text-white px-4 py-2 rounded-md shadow-md"></div>
+
+                <div class="side-panel flex flex-col items-center p-4">
+                    <canvas id="qrCanvas" class="border-2 border-gray-200 p-4 rounded-lg shadow-md"></canvas>
+                    <div class="mt-6">
+                        <img src="qr.png" alt="QR Code Example" class="w-48 h-48 rounded-lg shadow-md">
+                    </div>
+                </div>
+            </main>
+            <article class="mt-8 text-gray-700">
+                <h2 class="text-2xl font-bold mb-4">About QR Codes</h2>
+                <p class="mt-2 text-lg">QR codes (Quick Response codes) are two-dimensional barcodes that can store a variety of data...</p>
+                <h3 class="text-xl font-semibold mt-6">How to Generate a QR Code</h3>
+                <p class="mt-2 text-lg">Enter the details and the URL, then click the "Generate" button to create a QR code.</p>
+                <h3 class="text-xl font-semibold mt-6">How to Scan a QR Code</h3>
+                <p class="mt-2 text-lg">Use a QR scanner app to scan the generated code and retrieve the information.</p>
+            </article>
+        </div>
+    </main>
     <footer class="w-full text-center mt-8 py-6 text-sm text-gray-500 bg-white shadow-custom">
         © 2025 QR Code Generator. All rights reserved.
     </footer>
