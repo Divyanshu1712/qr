@@ -45,7 +45,7 @@ If you have VS Code, install the **Live Server** extension and start the project
 This project is open-source and available under the **MIT License**.
 
 ## 📬 Contact
-For any suggestions or contributions, feel free to reach out via [LinkedIn](https://linkedin.com/in/yourprofile) or create a pull request!
+For any suggestions or contributions, feel free to reach out via [LinkedIn](www.linkedin.com/in/divyanshu-srivastava-558403215) or create a pull request!
 
 ---
 💡 *Star this repo if you found it useful!* ⭐
