@@ -8,11 +8,6 @@ function generateQR() {
     const notification = document.getElementById('notification'); // Notification box
     
 
-    // if (!details || !link) {
-    //     alert('Please enter details and link.');
-    //     return;
-    // }
-
     if (!details || !link) {
         showNotification('⚠️ Please enter details and a link!', 'red');
         return;
@@ -36,8 +31,9 @@ function downloadQR() {
     downloadLink.click();
 }
 
-//reset field function
 
+
+//reset field function
 function resetField() {
     document.getElementById('data').value = ''; // Clear details input
     document.getElementById('link').value = ''; // Clear link input
@@ -52,6 +48,8 @@ function resetField() {
     resetBtn.style.display = 'none'; // Hide reset button
 }
 
+
+
 // Function to show notification
 function showNotification(message, color) {
     const notification = document.getElementById('notification');
@@ -63,3 +61,5 @@ function showNotification(message, color) {
         notification.style.display = 'none';
     }, 2000);
 }
+
+
