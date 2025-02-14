@@ -22,25 +22,25 @@
         }
     </style>
 </head>
+
 <body class="gradient-bg flex flex-col items-center min-h-screen">
     <header class="w-full gradient-header text-white py-4 text-center text-2xl font-bold shadow-custom flex justify-between items-center px-6">
         <a href="index.html">  <div>QR Code Generator</div></a>
         <div class="flex gap-3">
             <a href="histroy.html"><button class="px-4 py-2 bg-purple-600 text-white rounded-md hover:bg-purple-700 transition duration-200 text-sm font-semibold shadow-sm">History</button></a>
-            <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-200 text-sm font-semibold shadow-sm">Dashboard</button>
+            <a href="dashborad.html">  <button class="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition duration-200 text-sm font-semibold shadow-sm">Dashboard</button></a>
         </div>
     </header>
-    <main>
-        <div class="container bg-white shadow-custom rounded-lg p-8 mt-8 w-full max-w-4xl">
-            <div id="historyContainer" class="container bg-gray-50 shadow-lg rounded-2xl p-6 mt-8 w-full max-w-4xl mx-auto">
-                <h2 class="text-2xl font-bold mb-4">History</h2>
-            </div>
-        </div>   
+    <main >
+        <div id="historyContainer" class="container bg-gray-50 shadow-lg rounded-2xl p-3 mt-4 w-full max-w-4xl mx-auto flex-grow">
+            <h2 class="text-2xl font-bold mb-4">History</h2>
+        </div>
     </main>
-    <footer class="w-full text-center mt-8 py-6 text-sm text-gray-500 bg-white shadow-custom">
+    <!-- <footer class="w-full text-center mt-8 py-6 text-sm text-gray-500 bg-white shadow-custom">
         © 2025 QR Code Generator. All rights reserved.
-    </footer>
+    </footer> -->
     <script src="script.js"></script>
     <script src="new.js"></script>
 </body>
+
 </html>

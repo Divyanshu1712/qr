@@ -5,7 +5,7 @@ function generateQR() {
     const qrCanvas = document.getElementById('qrCanvas');
     const downloadBtn = document.getElementById('download-btn');
     const resetField = document.getElementById('reset-btn');
-    
+
     if (!details || !link) {
         showNotification('⚠️ Please enter details and a link!', 'red');
         return;
@@ -51,14 +51,17 @@ function displayHistory() {
 
         card.innerHTML = `
             <div class="flex justify-between items-center">
+                
                 <div class="w-1/3">
-                    <h3 class="text-lg font-semibold text-gray-800">${item.name}</h3>
+                    <h3 class="text-lg font-semibold text-gray-800">QR NAME:<br>${item.name}</h3>
                 </div>
-                <div class="w-1/3 text-center">
+
+                <div class="w-1/3 text-center">QR LINK:<br>
                     <a href="${item.link}" class="text-blue-500 underline break-all">${item.link}</a>
                 </div>
+                
                 <div class="w-1/3 text-right">
-                    <img src="${item.image}" alt="QR Code" class="inline-block rounded-lg shadow-md">
+                    <img src="${item.image}" alt="QR Code"  class="inline-block rounded-lg shadow-md w-32 h-32 object-cover">
                 </div>
             </div>
             <div class="flex justify-end space-x-4 mt-4">
@@ -72,7 +75,7 @@ function displayHistory() {
         `;
 
         // Add event listener for delete button
-        card.querySelector('.delete-btn').addEventListener('click', function() {
+        card.querySelector('.delete-btn').addEventListener('click', function () {
             deleteHistory(index);
         });
 
@@ -117,13 +120,13 @@ if (window.location.pathname.includes('histroy.html')) {
 function resetField() {
     document.getElementById('data').value = ''; // Clear details input
     document.getElementById('link').value = ''; // Clear link input
-    
+
     const qrCanvas = document.getElementById('qrCanvas');
     const downloadBtn = document.getElementById('download-btn');
     const resetBtn = document.getElementById('reset-btn');
-    
+
     qrCanvas.getContext('2d').clearRect(0, 0, qrCanvas.width, qrCanvas.height); // Clear QR code
-    
+
     downloadBtn.style.display = 'none'; // Hide download button
     resetBtn.style.display = 'none'; // Hide reset button
 }
